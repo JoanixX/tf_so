@@ -5,7 +5,7 @@ function App() {
     <>
       {/* Fondo de partículas */}
       <div className="particle-bg">
-        {Array.from({ length: 40 }).map((_, i) => (
+        {Array.from({ length: 8 }).map((_, i) => (
           <div className="particle" key={i} />
         ))}
       </div>

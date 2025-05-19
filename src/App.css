@@ -1,8 +1,9 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -116,51 +117,61 @@ body {
 
 /* Header */
 .header {
-  background: #0B0D2B;
-  padding: 20px 0;
-  border-bottom: 1px solid #1A1C44;
+  background: #10122a;
+  padding: 4px 0; /* Más pequeño */
+  border-bottom: 1px solid #23244a;
+  min-height: unset;
+  box-shadow: 0 2px 12px #23244a22;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: unset;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.15rem; /* Más pequeño */
   color: white;
+  padding: 0;
 }
 
 .logo-text {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.15rem; /* Más pequeño */
 }
 
 .nav {
   display: flex;
-  gap: 30px;
+  gap: 20px; /* Menor separación */
 }
 
 .nav-link {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-size: 0.95rem; /* Más pequeño */
+  transition: color 0.3s;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 
 .nav-link:hover {
-  color: #6C63FF;
+  color: #8affff;
+  background: #23244a;
 }
 
 .nav-link-highlight {
   color: #8AFF00;
   font-weight: 700;
+  background: #23244a;
+  padding: 4px 10px;
+  border-radius: 8px;
 }
 
 /* Main */
@@ -475,112 +486,134 @@ body {
   text-shadow: 0 0 16px #6c63ff;
 }
 
-/* --- Footer Futurista --- */
+/* --- Footer Futurista Mejorado --- */
 .footer-futuristic {
   width: 100vw;
-  background: rgba(30,40,60,0.55);
-  border-top: 2px solid #6C63FF;
-  box-shadow: 0 0 32px #6c63ff33, 0 0 24px #8aff0033;
-  backdrop-filter: blur(8px) saturate(1.2);
+  background: linear-gradient(90deg, #181a2a 60%, #23244a 100%);
+  border-top: 1.5px solid #6C63FF;
+  box-shadow: 0 0 16px #6c63ff22, 0 0 8px #8aff0033;
+  backdrop-filter: blur(6px) saturate(1.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 32px 0 18px 0;
-  margin-top: 48px;
+  padding: 0;
+  margin-top: 0;
   position: relative;
   z-index: 2;
-  border-radius: 24px 24px 0 0;
+  border-radius: 18px 18px 0 0;
+  min-height: 48px;
 }
+
 .footer-container {
   width: 100%;
   max-width: 900px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-}
-.footer-container span {
-  color: #8aff00;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  text-shadow: 0 0 8px #8aff00aa, 0 0 16px #6c63ff99;
-  background: rgba(30,40,60,0.7);
-  padding: 12px 32px;
-  border-radius: 12px;
-  border: 1.5px solid #6c63ff;
-  box-shadow: 0 0 12px #6c63ff33;
+  padding: 8px 24px;
 }
 
-/* --- Partículas/cubos animados futuristas --- */
+.footer-container span {
+  color: #b6ffe7;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px #8affffcc, 0 0 12px #6c63ff99;
+  background: rgba(30,40,60,0.55);
+  padding: 6px 18px;
+  border-radius: 8px;
+  border: 1px solid #3b2fff55;
+  box-shadow: 0 0 8px #6c63ff22;
+  font-weight: 500;
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-link {
+  color: #8affff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.2s, text-shadow 0.2s;
+  text-shadow: 0 0 8px #8affffaa;
+  font-weight: 700;
+}
+.footer-link:hover {
+  color: #fff;
+  text-shadow: 0 0 16px #6c63ff;
+}
+
+/* --- Partículas Futuristas --- */
 .particle-bg {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: 0 !important;
+  z-index: 1 !important;
   overflow: hidden;
 }
+
 .particle {
   position: absolute;
-  width: 18px;
-  height: 18px;
-  background: linear-gradient(135deg, #d77dfb 60%, #8AFF00 100%);
-  border-radius: 4px;
-  opacity: 0.18;
-  box-shadow: 0 0 16px #cc7de699, 0 0 8px #8aff0033;
-  animation: particle-move 18s linear infinite;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #8affff 80%, #6c63ff 100%);
+  border-radius: 18px;
+  opacity: 0.55;
+  box-shadow:
+    0 0 32px #8affffcc,
+    0 0 48px #6c63ff99,
+    0 0 24px #8affff55 inset;
+  filter: blur(0.5px) brightness(1.2);
+  animation: particle-move-futuristic 14s cubic-bezier(.77,0,.18,1) infinite;
 }
-/* Distribución y animación aleatoria para cada cubo */
-.particle:nth-child(1) { top: 10%; left: 5%; animation-duration: 14s; animation-delay: 0s; }
-.particle:nth-child(2) { top: 20%; left: 15%; animation-duration: 16s; animation-delay: 2s; }
-.particle:nth-child(3) { top: 30%; left: 25%; animation-duration: 12s; animation-delay: 4s; }
-.particle:nth-child(4) { top: 40%; left: 35%; animation-duration: 20s; animation-delay: 1s; }
-.particle:nth-child(5) { top: 50%; left: 45%; animation-duration: 18s; animation-delay: 3s; }
-.particle:nth-child(6) { top: 60%; left: 55%; animation-duration: 15s; animation-delay: 5s; }
-.particle:nth-child(7) { top: 70%; left: 65%; animation-duration: 17s; animation-delay: 2s; }
-.particle:nth-child(8) { top: 80%; left: 75%; animation-duration: 13s; animation-delay: 6s; }
-.particle:nth-child(9) { top: 90%; left: 85%; animation-duration: 19s; animation-delay: 1s; }
-.particle:nth-child(10) { top: 15%; left: 80%; animation-duration: 14s; animation-delay: 3s; }
-.particle:nth-child(11) { top: 25%; left: 70%; animation-duration: 16s; animation-delay: 5s; }
-.particle:nth-child(12) { top: 35%; left: 60%; animation-duration: 12s; animation-delay: 2s; }
-.particle:nth-child(13) { top: 45%; left: 50%; animation-duration: 20s; animation-delay: 4s; }
-.particle:nth-child(14) { top: 55%; left: 40%; animation-duration: 18s; animation-delay: 6s; }
-.particle:nth-child(15) { top: 65%; left: 30%; animation-duration: 15s; animation-delay: 1s; }
-.particle:nth-child(16) { top: 75%; left: 20%; animation-duration: 17s; animation-delay: 3s; }
-.particle:nth-child(17) { top: 85%; left: 10%; animation-duration: 13s; animation-delay: 5s; }
-.particle:nth-child(18) { top: 5%; left: 90%; animation-duration: 19s; animation-delay: 2s; }
-.particle:nth-child(19) { top: 12%; left: 60%; animation-duration: 14s; animation-delay: 4s; }
-.particle:nth-child(20) { top: 22%; left: 40%; animation-duration: 16s; animation-delay: 6s; }
-.particle:nth-child(21) { top: 32%; left: 20%; animation-duration: 12s; animation-delay: 1s; }
-.particle:nth-child(22) { top: 42%; left: 80%; animation-duration: 20s; animation-delay: 3s; }
-.particle:nth-child(23) { top: 52%; left: 60%; animation-duration: 18s; animation-delay: 5s; }
-.particle:nth-child(24) { top: 62%; left: 40%; animation-duration: 15s; animation-delay: 2s; }
-.particle:nth-child(25) { top: 72%; left: 20%; animation-duration: 17s; animation-delay: 4s; }
-.particle:nth-child(26) { top: 82%; left: 80%; animation-duration: 13s; animation-delay: 6s; }
-.particle:nth-child(27) { top: 92%; left: 60%; animation-duration: 19s; animation-delay: 1s; }
-.particle:nth-child(28) { top: 18%; left: 30%; animation-duration: 14s; animation-delay: 3s; }
-.particle:nth-child(29) { top: 28%; left: 50%; animation-duration: 16s; animation-delay: 5s; }
-.particle:nth-child(30) { top: 38%; left: 70%; animation-duration: 12s; animation-delay: 2s; }
-.particle:nth-child(31) { top: 48%; left: 90%; animation-duration: 20s; animation-delay: 4s; }
-.particle:nth-child(32) { top: 58%; left: 10%; animation-duration: 18s; animation-delay: 6s; }
-.particle:nth-child(33) { top: 68%; left: 30%; animation-duration: 15s; animation-delay: 1s; }
-.particle:nth-child(34) { top: 78%; left: 50%; animation-duration: 17s; animation-delay: 3s; }
-.particle:nth-child(35) { top: 88%; left: 70%; animation-duration: 13s; animation-delay: 5s; }
-.particle:nth-child(36) { top: 8%; left: 40%; animation-duration: 19s; animation-delay: 2s; }
-.particle:nth-child(37) { top: 16%; left: 60%; animation-duration: 14s; animation-delay: 4s; }
-.particle:nth-child(38) { top: 24%; left: 80%; animation-duration: 16s; animation-delay: 6s; }
-.particle:nth-child(39) { top: 32%; left: 10%; animation-duration: 12s; animation-delay: 1s; }
-.particle:nth-child(40) { top: 40%; left: 30%; animation-duration: 20s; animation-delay: 3s; }
-@keyframes particle-move {
-  0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.18; }
-  20% { opacity: 0.32; }
-  50% { transform: translateY(-60px) scale(1.2) rotate(180deg); opacity: 0.22; }
-  80% { opacity: 0.32; }
-  100% { transform: translateY(40px) scale(1) rotate(360deg); opacity: 0.18; }
+
+.particle:nth-child(1) { top: 10%; left: 8%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 18%; left: 75%; animation-delay: 2s; }
+.particle:nth-child(3) { top: 38%; left: 30%; animation-delay: 1.2s; }
+.particle:nth-child(4) { top: 55%; left: 60%; animation-delay: 3.1s; }
+.particle:nth-child(5) { top: 70%; left: 15%; animation-delay: 1.7s; }
+.particle:nth-child(6) { top: 80%; left: 80%; animation-delay: 4.2s; }
+.particle:nth-child(7) { top: 25%; left: 55%; animation-delay: 2.5s; }
+.particle:nth-child(8) { top: 60%; left: 85%; animation-delay: 0.8s; }
+
+@keyframes particle-move-futuristic {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.55;
+    filter: blur(0.5px) brightness(1.2);
+  }
+  20% {
+    transform: translate(24px, -18px) scale(1.08) rotate(60deg);
+    opacity: 0.7;
+    filter: blur(1.5px) brightness(1.3);
+  }
+  40% {
+    transform: translate(-18px, 22px) scale(0.96) rotate(120deg);
+    opacity: 0.6;
+    filter: blur(0.5px) brightness(1.1);
+  }
+  60% {
+    transform: translate(12px, -12px) scale(1.12) rotate(180deg);
+    opacity: 0.8;
+    filter: blur(2px) brightness(1.4);
+  }
+  80% {
+    transform: translate(-10px, 18px) scale(1.04) rotate(300deg);
+    opacity: 0.65;
+    filter: blur(1px) brightness(1.2);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(360deg);
+    opacity: 0.55;
+    filter: blur(0.5px) brightness(1.2);
+  }
 }
 
 /* Asegura que el contenido principal esté por encima de las partículas */
-.header, .main, .about-section, .company-section, .contact-section, .footer-futuristic {
+.header, .main, .footer-futuristic {
   position: relative;
   z-index: 2;
 }
