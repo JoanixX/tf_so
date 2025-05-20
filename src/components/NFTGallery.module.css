@@ -1,0 +1,87 @@
+/* Galería de NFTs con glassmorphism y efectos neón */
+.gallerySection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 64px auto;
+  padding: 48px 32px;
+  background: rgba(24, 26, 42, 0.92);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 #23244a33, 0 1.5px 8px #6c63ff22;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+.galleryTitle {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #8AFF00;
+  text-shadow: 0 0 24px #6c63ff99, 0 0 8px #8aff00cc;
+}
+.nftGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.nftCard {
+  background: rgba(30,40,60,0.7);
+  border-radius: 18px;
+  box-shadow: 0 0 32px #6c63ff33, 0 0 16px #8aff0033;
+  border: 1.5px solid #6c63ff44;
+  padding: 18px 18px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+  cursor: grab;
+  position: relative;
+}
+.nftCard:hover {
+  box-shadow: 0 0 64px #8aff00cc, 0 0 32px #6c63ff99;
+  border-color: #8AFF00;
+  transform: scale(1.04) rotate(-2deg);
+}
+.nftImg {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px #6c63ff55;
+}
+.nftInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.nftName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.nftRarity {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 2px 12px;
+  border-radius: 8px;
+  margin: 4px 0;
+  background: #23244a;
+  color: #8AFF00;
+  text-shadow: 0 0 8px #8aff00cc;
+}
+.rarity-común { color: #b3b3b3; background: #23244a; }
+.rarity-raro { color: #6C63FF; background: #23244a; }
+.rarity-épico { color: #8AFF00; background: #23244a; }
+.nftPrice {
+  font-size: 1.1rem;
+  color: #6C63FF;
+  font-weight: 600;
+  margin-top: 2px;
+}

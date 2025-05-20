@@ -128,14 +128,15 @@ body, #root {
 }
 .particle {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  background: radial-gradient(circle at 60% 40%, #ffffff 60%, #8AFF00 100%);
-  opacity: 0.18;
-  box-shadow: 0 0 48px #8aff00bb, 0 0 32px #ffffff55;
+  background: radial-gradient(circle at 60% 40%, #c98afd 70%, #8400ff 100%);
+  opacity: 0.28;
+  box-shadow: 0 0 96px #8800ffee, 0 0 64px #ffffff99, 0 0 120px #6c63ff55;
   animation: particle-move-lusion 16s ease-in-out infinite, particle-blur-lusion 4s ease-in-out infinite alternate;
-  filter: blur(2px);
+  filter: blur(1.5px) brightness(1.3);
+  transition: filter 0.4s, box-shadow 0.4s;
 }
 .particle:nth-child(1) { top: 10%; left: 8%; animation-delay: 0s; }
 .particle:nth-child(2) { top: 18%; left: 75%; animation-delay: 2s; }
@@ -146,28 +147,51 @@ body, #root {
 .particle:nth-child(7) { top: 25%; left: 55%; animation-delay: 2.5s; }
 .particle:nth-child(8) { top: 60%; left: 85%; animation-delay: 0.8s; }
 @keyframes particle-move-lusion {
-  0%   { transform: translateY(0) scale(1) rotate(0deg);}
-  20%  { transform: translateY(-40px) scale(1.08) rotate(60deg);}
-  50%  { transform: translateY(60px) scale(0.92) rotate(180deg);}
-  80%  { transform: translateY(-30px) scale(1.04) rotate(300deg);}
-  100% { transform: translateY(0) scale(1) rotate(360deg);}
+  0%   { transform: translateY(0) scale(1.08) rotate(0deg);}
+  20%  { transform: translateY(-60px) scale(1.18) rotate(60deg);}
+  50%  { transform: translateY(90px) scale(0.98) rotate(180deg);}
+  80%  { transform: translateY(-50px) scale(1.12) rotate(300deg);}
+  100% { transform: translateY(0) scale(1.08) rotate(360deg);}
 }
 @keyframes particle-blur-lusion {
-  0%   { filter: blur(2px);}
-  100% { filter: blur(8px);}
+  0%   { filter: blur(1.5px) brightness(1.3);}
+  100% { filter: blur(10px) brightness(1.5);}
 }
 
-/* Animación de entrada para secciones */
+/* Animación de entrada para secciones: más movimiento, escala, blur y glow */
 .section-fadein {
   opacity: 0;
-  transform: translateY(60px) scale(0.98) rotate(-2deg);
-  animation: fadein-lusion 1.2s cubic-bezier(.4,2,.6,1) forwards;
+  transform: translateY(80px) scale(0.95) rotate(-3deg) skewY(2deg);
+  filter: blur(24px) brightness(0.7) drop-shadow(0 0 32px #6c63ff88);
+  animation: fadein-lusion-futurist 1.4s cubic-bezier(.4,2,.6,1) forwards;
 }
-@keyframes fadein-lusion {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1) rotate(0deg);
+@keyframes fadein-lusion-futurist {
+  0% {
+    opacity: 0;
+    transform: translateY(80px) scale(0.95) rotate(-3deg) skewY(2deg);
+    filter: blur(24px) brightness(0.7) drop-shadow(0 0 32px #6c63ff88);
   }
+  60% {
+    opacity: 1;
+    transform: translateY(-12px) scale(1.04) rotate(1deg) skewY(-1deg);
+    filter: blur(2px) brightness(1.1) drop-shadow(0 0 64px #8aff00cc);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg) skewY(0deg);
+    filter: blur(0) brightness(1) drop-shadow(0 0 0 #0000);
+  }
+}
+.section-fadein-futurist {
+  opacity: 1;
+  pointer-events: auto;
+  filter: blur(0) brightness(1);
+  transform: scale(1) translateY(0);
+  transition:
+    opacity 0.7s cubic-bezier(.4,2,.6,1),
+    filter 0.7s cubic-bezier(.4,2,.6,1),
+    transform 0.7s cubic-bezier(.4,2,.6,1);
+  animation: fadein-lusion-futurist 1.2s cubic-bezier(.4,2,.6,1);
 }
 
 /* Oculta secciones hasta que se presione "Comenzar" */
@@ -176,18 +200,6 @@ body, #root {
   pointer-events: none;
   filter: blur(24px);
   transform: scale(0.98) translateY(60px);
-  transition:
-    opacity 0.7s cubic-bezier(.4,2,.6,1),
-    filter 0.7s cubic-bezier(.4,2,.6,1),
-    transform 0.7s cubic-bezier(.4,2,.6,1);
-}
-
-/* Animación de entrada minimalista y futurista */
-.section-fadein-futurist {
-  opacity: 1;
-  pointer-events: auto;
-  filter: blur(0);
-  transform: scale(1) translateY(0);
   transition:
     opacity 0.7s cubic-bezier(.4,2,.6,1),
     filter 0.7s cubic-bezier(.4,2,.6,1),
@@ -207,36 +219,67 @@ body, #root {
   transition: transform 0.5s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
 }
 .section-container:hover {
-  transform: rotate(-2deg) scale(1.015);
-  box-shadow: 0 0 64px #6c63ff55, 0 0 32px #8aff0033;
+  transform: rotate(-2deg) scale(1.025) skewY(1deg);
+  box-shadow: 0 0 96px #6c63ff99, 0 0 48px #8aff00bb;
+  filter: brightness(1.08) drop-shadow(0 0 24px #8aff00cc);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .main-container {
-    flex-direction: column;
-    padding: 40px 0;
-  }
-  .content-right {
-    margin-top: 40px;
-  }
-  .image-collage {
-    grid-template-columns: repeat(2, 140px);
-    grid-template-rows: repeat(2, 100px);
-  }
-  .image-collage img {
-    width: 140px;
-    height: 100px;
-  }
+/*
+Estilos para dark y light mode globales.
+*/
+body.dark-mode {
+  background: #0B0D2B;
+  color: #fff;
 }
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 2.5rem;
-  }
-  .btn {
-    padding: 12px 24px;
-    font-size: 0.9rem;
-  }
+body.light-mode {
+  background: #f6f8ff;
+  color: #23244a;
+}
+body.light-mode .main-container,
+body.light-mode .section-container,
+body.light-mode .gallerySection {
+  background: #fff !important;
+  color: #23244a !important;
+  box-shadow: 0 8px 32px 0 #6c63ff11, 0 1.5px 8px #8aff0011;
+  border-color: #e0e0e0 !important;
+}
+body.light-mode .highlight {
+  background: linear-gradient(90deg, #8AFF00 0%, #6C63FF 100%);
+  color: #23244a;
+}
+body.light-mode .highlight-green {
+  color: #6C63FF;
+}
+body.light-mode .btn-primary {
+  background: #8AFF00;
+  color: #23244a;
+}
+body.light-mode .btn-primary:hover {
+  background: #6C63FF;
+  color: #fff;
+}
+body.light-mode .feature,
+body.light-mode .nftCard {
+  background: #f6f8ff !important;
+  color: #23244a !important;
+  border-color: #e0e0e0 !important;
+  box-shadow: 0 0 24px #8aff0011;
+}
+body.light-mode .nftRarity {
+  background: #e0e0e0 !important;
+  color: #6C63FF !important;
+}
+body.light-mode .nftPrice {
+  color: #8AFF00 !important;
+}
+body.light-mode .footer-futuristic {
+  background: linear-gradient(90deg, #f6f8ff 60%, #e0e0e0 100%) !important;
+  border-top: 2px solid #8AFF00 !important;
+}
+body.light-mode .footer-link {
+  color: #6C63FF !important;
+}
+body.light-mode .footer-link:hover {
+  color: #8AFF00 !important;
 }
 

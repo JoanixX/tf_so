@@ -16,9 +16,11 @@ const Navbar: React.FC = () => (
         <span className={styles['logo-text']}>Genifty</span>
       </div>
       <nav className={styles.nav}>
-        <a href="#" className={`${styles['nav-link']} ${styles['nav-link-highlight']}`}>Start Tour</a>
-        <a href="#" className={styles['nav-link']}>Demos</a>
-        <a href="#" className={styles['nav-link']}>Features</a>
+        <a href="#galeria" className={`${styles['nav-link']} ${styles['nav-link-highlight']}`}>Galería</a>
+        <a href="#carrito" className={styles['nav-link']}>Carrito</a>
+        <a href="#favoritos" className={styles['nav-link']}>Favoritos</a>
+        <a href="#wallet" className={styles['nav-link']}>Wallet</a>
+        <a href="#modo" className={styles['nav-link']}>Modo</a>
       </nav>
     </div>
   </header>

@@ -27,31 +27,31 @@
 
 /* TITULOS */
 h2, .about-title, .company-title, .contact-title {
-  font-size: 2.3rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   color: #fff;
   text-align: center;
   letter-spacing: 1px;
   background: none;
-  text-shadow: 0 2px 16px #6c63ff22;
+  text-shadow: 0 2px 24px #6c63ff33;
   font-family: 'Inter', sans-serif;
 }
 
 /* TEXTO GENERAL DE SECCIONES */
 .about-text,
 .company-description {
-  font-size: 1.13rem;
+  font-size: 1.45rem;
   color: #ccc;
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto 28px auto;
+  max-width: 900px;
+  margin: 0 auto 32px auto;
   line-height: 1.7;
   background: rgba(30,40,60,0.55);
   border-radius: 14px;
-  padding: 22px 24px;
+  padding: 32px 32px;
   border: 1px solid #23244a;
-  box-shadow: 0 2px 12px #6c63ff11;
+  box-shadow: 0 2px 16px #6c63ff22;
   font-family: 'Inter', sans-serif;
 }
 
@@ -73,15 +73,15 @@ h2, .about-title, .company-title, .contact-title {
 .feature {
   display: flex;
   align-items: center;
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   background: rgba(60, 70, 120, 0.18);
   border: 1px solid #23244a;
-  padding: 14px 24px;
+  padding: 18px 32px;
   border-radius: 12px;
   color: #fff;
   box-shadow: 0 2px 12px #6c63ff11;
   font-weight: 600;
-  min-width: 200px;
+  min-width: 240px;
   font-family: 'Inter', sans-serif;
   transition: box-shadow 0.2s, border-color 0.2s, background 0.2s;
 }
@@ -198,20 +198,21 @@ textarea.form-input {
     margin: 28px auto;
   }
   h2, .about-title, .company-title, .contact-title {
-    font-size: 1.5rem;
+    font-size: 2.1rem;
   }
   .about-text, .company-description {
-    padding: 12px 4px;
-    font-size: 0.98rem;
+    font-size: 1.08rem;
+    padding: 16px 6px;
   }
   .company-features {
     flex-direction: column;
     gap: 14px;
   }
   .feature {
+    font-size: 1.05rem;
     min-width: unset;
     width: 100%;
-    justify-content: center;
+    padding: 12px 8px;
   }
   .contact-form {
     padding: 12px 4px;
@@ -226,11 +227,11 @@ textarea.form-input {
     margin: 10px auto;
   }
   h2, .about-title, .company-title, .contact-title {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
   .about-text, .company-description {
-    padding: 6px 1px;
-    font-size: 0.93rem;
+    font-size: 0.98rem;
+    padding: 8px 2px;
   }
   .contact-form {
     padding: 6px 1px;
