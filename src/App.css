@@ -11,35 +11,97 @@ body, #root {
   color: white;
   line-height: 1.5;
   min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Main */
 .main {
-  width: 100%;
+  width: 100vw;
   min-height: 80vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
 }
 
 .main-container {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 0;
-  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(20, 22, 50, 0.7);
+  border-radius: 32px;
+  box-shadow: 0 0 48px #6c63ff22;
+  padding: 70px 48px;
+  gap: 20px;
 }
 
 .content-left {
   max-width: 600px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+  justify-content: center;
+}
+
+.content-right {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center; /* Alinea las imágenes a la derecha y centradas verticalmente */
+  min-width: 0;
+}
+
+.btn {
+  display: inline-block;
+  align-self: flex-start; /* El botón queda alineado al inicio del texto */
+  padding: 14px 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  margin-top: 18px;
+}
+
+/* Centrar secciones de la landing y features */
+#secciones {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centrar las páginas de features (galería, carrito, etc) */
+.main > div {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .title {
@@ -66,18 +128,6 @@ body, #root {
   color: #ccc;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 30px;
-  font-weight: 700;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  user-select: none;
-  transition: background-color 0.3s ease;
-}
-
 .btn-primary {
   background: #6C63FF;
   color: white;
@@ -92,7 +142,10 @@ body, #root {
 .content-right {
   flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center; /* Alinea las imágenes a la derecha y centradas verticalmente */
+  min-width: 0;
 }
 
 .image-collage {
@@ -212,6 +265,27 @@ body, #root {
 .contact-section {
   margin-top: 64px;
   margin-bottom: 64px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ajuste para las páginas nuevas y secciones para que siempre estén centradas */
+.gallerySection,
+.about-section,
+.company-section,
+.contact-section {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Tilt animado en hover para recuadros */
@@ -281,5 +355,19 @@ body.light-mode .footer-link {
 }
 body.light-mode .footer-link:hover {
   color: #8AFF00 !important;
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 40px 10px;
+    gap: 24px;
+  }
+  .content-right {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+  }
 }
 

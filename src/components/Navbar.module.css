@@ -5,11 +5,20 @@
   box-shadow: 0 2px 24px #6c63ff22, 0 0 8px #8aff0033;
   position: relative;
   z-index: 10;
+  width: 100%;
+  margin: 0;
+  left: unset;
+  right: unset;
 }
 .header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 0 32px;
 }
 .logo {
   display: flex;
@@ -20,16 +29,14 @@
   color: #fff;
   letter-spacing: 1px;
   text-shadow: 0 0 8px #6C63FF88;
-}
-.logo-text {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #fff;
-  letter-spacing: 1px;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 .nav {
   display: flex;
+  flex-direction: row;
   gap: 30px;
+  margin-left: auto;
 }
 .nav-link {
   color: #fff;

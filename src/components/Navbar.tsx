@@ -3,8 +3,8 @@ import styles from './Navbar.module.css';
 
 const Navbar: React.FC = () => (
   <header className={styles.header}>
-    <div className={`container ${styles['header-container']}`}>
-      <div className={styles.logo}>
+    <div className={`container ${styles['header-container']}`}>  
+      <a href="#" className={styles.logo}>
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#6C63FF"/>
@@ -14,9 +14,10 @@ const Navbar: React.FC = () => (
           <path fill="url(#grad)" d="M12 12L22 17L12 22L2 17L12 12Z"/>
         </svg>
         <span className={styles['logo-text']}>Genifty</span>
-      </div>
+      </a>
       <nav className={styles.nav}>
-        <a href="#galeria" className={`${styles['nav-link']} ${styles['nav-link-highlight']}`}>Galería</a>
+        <a href="#" className={`${styles['nav-link']} ${styles['nav-link-highlight']}`}>Inicio</a>
+        <a href="#galeria" className={styles['nav-link']}>Galería</a>
         <a href="#carrito" className={styles['nav-link']}>Carrito</a>
         <a href="#favoritos" className={styles['nav-link']}>Favoritos</a>
         <a href="#wallet" className={styles['nav-link']}>Wallet</a>
